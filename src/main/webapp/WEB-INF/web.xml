@@ -1,0 +1,16 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <display-name>Rothc Process-based SADI Services</display-name>
+    <servlet>
+        <servlet-name>fetchRothcInputParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcInputParams</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fetchRothcInputParams</servlet-name>
+        <url-pattern>/fetchRothcInputParams</url-pattern>
+    </servlet-mapping>
+</web-app>
+
