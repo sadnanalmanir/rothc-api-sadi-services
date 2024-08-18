@@ -160,25 +160,25 @@ public class FetchRothcInputParams extends SimpleSynchronousServiceServlet {
         private static final Model m_model = ModelFactory.createDefaultModel();
         // object properties
         public static final Property type = m_model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
-        public static final Property has_startDate = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/nwf.owl#has_startDate");
-        public static final Property has_endDate = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/nwf.owl#has_endDate");
-        public static final Property has_fieldId = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/nwf.owl#has_fieldId");
-        public static final Property has_catchmentId = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/nwf.owl#has_catchmentId");
-        public static final Property has_clay = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/nwf.owl#has_clay");
-        public static final Property has_depth = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/nwf.owl#has_depth");
-        public static final Property has_iom = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/nwf.owl#has_iom");
-        public static final Property has_nsteps = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/nwf.owl#has_nsteps");
+        public static final Property has_startDate = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_startDate");
+        public static final Property has_endDate = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_endDate");
+        public static final Property has_fieldId = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_fieldId");
+        public static final Property has_catchmentId = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_catchmentId");
+        public static final Property has_clay = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_clay");
+        public static final Property has_depth = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_depth");
+        public static final Property has_iom = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_iom");
+        public static final Property has_nsteps = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_nsteps");
         // data property
-        public static final Property has_value = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/nwf.owl#has_value");
+        public static final Property has_value = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_value");
         // resources
-        public static final Resource StartDate = m_model.createResource("http://localhost:8080/ontology/domain-ontology/nwf.owl#StartDate");
-        public static final Resource EndDate = m_model.createResource("http://localhost:8080/ontology/domain-ontology/nwf.owl#EndDate");
-        public static final Resource FieldId = m_model.createResource("http://localhost:8080/ontology/domain-ontology/nwf.owl#FieldId");
-        public static final Resource CatchmentId = m_model.createResource("http://localhost:8080/ontology/domain-ontology/nwf.owl#CatchmentId");
-        public static final Resource Clay = m_model.createResource("http://localhost:8080/ontology/domain-ontology/nwf.owl#Clay");
-        public static final Resource Depth = m_model.createResource("http://localhost:8080/ontology/domain-ontology/nwf.owl#Depth");
-        public static final Resource Iom = m_model.createResource("http://localhost:8080/ontology/domain-ontology/nwf.owl#Iom");
-        public static final Resource Nsteps = m_model.createResource("http://localhost:8080/ontology/domain-ontology/nwf.owl#Nsteps");
+        public static final Resource StartDate = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#StartDate");
+        public static final Resource EndDate = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#EndDate");
+        public static final Resource FieldId = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#FieldId");
+        public static final Resource CatchmentId = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#CatchmentId");
+        public static final Resource Clay = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Clay");
+        public static final Resource Depth = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Depth");
+        public static final Resource Iom = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Iom");
+        public static final Resource Nsteps = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Nsteps");
         public static final Resource Input = m_model.createResource("http://localhost:8080/ontology/service-ontology/fetchRothcInputParams.owl#Input");
         public static final Resource Output = m_model.createResource("http://localhost:8080/ontology/service-ontology/fetchRothcInputParams.owl#Output");
 

@@ -51,7 +51,7 @@ $ docker compose up --build
 After the deployment, open the browser to view:
 
 - SADI services at http://localhost:8080/rothc-api-sadi-services
-- Domain ontology at http://localhost:8080/ontology/domain-ontology/nwf.owl
+- Domain ontology at http://localhost:8080/ontology/domain-ontology/rothc.owl
 - Service ontologies at
   - http://localhost:8080/ontology/service-ontology/allCatchments.owl
   - http://localhost:8080/ontology/service-ontology/getCatchmentInfo.owl
