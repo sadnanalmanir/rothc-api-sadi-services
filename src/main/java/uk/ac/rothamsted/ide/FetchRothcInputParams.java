@@ -37,7 +37,7 @@ public class FetchRothcInputParams extends SimpleSynchronousServiceServlet {
     public void processInput(Resource input, Resource output) {
 
         String apiKey="X-Api-Key";
-        String apiValue="243fa5b-eb83-470b-aa36-0f3c2566114b";
+        String apiValue="2438fa5b-eb83-470b-aa36-0f3c2566114b";
         /*
         Properties properties = new Properties();
         try (InputStream inputStream = FetchRothcInputParams.class.getResourceAsStream("rothc-api-access.properties")) {
