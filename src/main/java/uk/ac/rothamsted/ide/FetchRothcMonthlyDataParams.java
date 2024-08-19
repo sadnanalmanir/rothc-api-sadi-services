@@ -86,7 +86,7 @@ public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet
                 "    \"startDate\": \"" +startDateValue+ "\",\n" +
                 "    \"endDate\": \""+endDateValue+"\",\n" +
                 "    \"catchmentID\": "+catchmentIdValue+",\n" +
-                "    \"fieldID\": "+fieldIdValue+"\n" +
+                "    \"fieldid\": "+fieldIdValue+"\n" +
                 "}";
         log.info("Data to send via POST method: " +body);
 
