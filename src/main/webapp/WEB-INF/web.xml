@@ -8,9 +8,17 @@
         <servlet-name>fetchRothcInputParams</servlet-name>
         <servlet-class>uk.ac.rothamsted.ide.FetchRothcInputParams</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataParams</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fetchRothcInputParams</servlet-name>
         <url-pattern>/fetchRothcInputParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataParams</url-pattern>
     </servlet-mapping>
 </web-app>
 

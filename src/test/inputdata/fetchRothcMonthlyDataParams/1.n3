@@ -1,0 +1,22 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rothc:  <http://localhost:8080/ontology/domain-ontology/rothc.owl#> .
+@prefix service: <http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataParams.owl#> .
+@prefix ex: <http://example.com/exuri#> .
+
+rothc:Catchment a  service:Input ;
+    rothc:has_startDate ex:node1 ;
+    rothc:has_endDate ex:node2 ;
+    rothc:has_catchmentId ex:node3 ;
+    rothc:has_fieldId ex:node4 .
+
+ex:node1 a  rothc:StartDate ;
+    rothc:has_value "2011-01-01"^^xsd:string .
+
+ex:node2 a  rothc:EndDate ;
+    rothc:has_value "2020-12-31"^^xsd:string .
+
+ex:node3 a  rothc:CatchmentId ;
+    rothc:has_value "1"^^xsd:string .
+
+ex:node4 a  rothc:FieldId ;
+    rothc:has_value "1"^^xsd:string .

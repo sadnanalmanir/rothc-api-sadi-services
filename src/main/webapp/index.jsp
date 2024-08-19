@@ -20,7 +20,8 @@
         <div id='content'>
             <h2>SADI Services</h2>
             <ul>
-                <li><a href="./getMeasurementByCatchmentName">getMeasurementByCatchmentName</a></li>
+                <li><a href="./fetchRothcInputParams">fetchRothcInputParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataParams">fetchRothcMonthlyDataParams</a></li>
             </Ul>
         </div> <!-- content -->
         <div id='footer'>
