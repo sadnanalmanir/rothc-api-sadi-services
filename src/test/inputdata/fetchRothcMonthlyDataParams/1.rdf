@@ -18,13 +18,13 @@
 
         <ns0:has_catchmentId>
             <ns0:CatchmentId rdf:about="http://example.com/exuri#node3">
-                <ns0:has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</ns0:has_value>
+                <ns0:has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns0:has_value>
             </ns0:CatchmentId>
         </ns0:has_catchmentId>
 
         <ns0:has_fieldId>
             <ns0:FieldId rdf:about="http://example.com/exuri#node4">
-                <ns0:has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</ns0:has_value>
+                <ns0:has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns0:has_value>
             </ns0:FieldId>
         </ns0:has_fieldId>
 
