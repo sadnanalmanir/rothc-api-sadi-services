@@ -47,7 +47,7 @@
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://localhost:8080/ontology/domain-ontology/rothc.owl#has_value"/>
                                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -85,7 +85,7 @@
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://localhost:8080/ontology/domain-ontology/rothc.owl#has_value"/>
                                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -136,7 +136,7 @@
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://localhost:8080/ontology/domain-ontology/rothc.owl#has_value"/>
                                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -155,7 +155,7 @@
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://localhost:8080/ontology/domain-ontology/rothc.owl#has_value"/>
                                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -193,7 +193,7 @@
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://localhost:8080/ontology/domain-ontology/rothc.owl#has_value"/>
                                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
