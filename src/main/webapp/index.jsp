@@ -4,7 +4,7 @@
 %>
 <html>
 <head>
-    <title>NorthWykeFarmPlatform API Endpoint SADI Services</title>
+    <title>SADI Services exposing API for the farm platform data</title>
 </head>
 <body>
 <div id='outer-frame'>
@@ -22,6 +22,7 @@
             <ul>
                 <li><a href="./fetchRothcInputParams">fetchRothcInputParams</a></li>
                 <li><a href="./fetchRothcMonthlyDataParams">fetchRothcMonthlyDataParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataParams2">fetchRothcMonthlyDataParams2</a></li>
             </Ul>
         </div> <!-- content -->
         <div id='footer'>

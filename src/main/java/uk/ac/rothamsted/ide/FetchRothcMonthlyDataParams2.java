@@ -13,25 +13,24 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.sadiframework.service.annotations.*;
 import org.sadiframework.service.simple.SimpleSynchronousServiceServlet;
 
-import org.apache.http.impl.client.CloseableHttpClient;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-@Name("fetchRothcMonthlyDataParams")
+@Name("fetchRothcMonthlyDataParams2")
 @Description("Rothc SADI services: Fetch non-monthly data values based on the start date, end date, and id of catchment and field")
 @ContactEmail("sadnanalmanir@gmail.com")
-@InputClass("http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataParams.owl#Input")
-@OutputClass("http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataParams.owl#Output")
-public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet {
-    private static final Logger log = Logger.getLogger(FetchRothcMonthlyDataParams.class);
+@InputClass("http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataParams2.owl#Input")
+@OutputClass("http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataParams2.owl#Output")
+public class FetchRothcMonthlyDataParams2 extends SimpleSynchronousServiceServlet {
+    private static final Logger log = Logger.getLogger(FetchRothcMonthlyDataParams2.class);
 
     @Override
     public void processInput(Resource input, Resource output) {
@@ -40,7 +39,7 @@ public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet
         String apiSecretValue=null;
 
 
-        try (InputStream is = FetchRothcMonthlyDataParams.class.getClassLoader().getResourceAsStream("rothc-api-access.properties")) {
+        try (InputStream is = FetchRothcMonthlyDataParams2.class.getClassLoader().getResourceAsStream("rothc-api-access.properties")) {
             Properties prop = new Properties();
             prop.load(is);
             apiSecretKey = prop.getProperty("apiKey");
@@ -50,7 +49,7 @@ public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet
         }
 
         log.info("*** SADI Service ***");
-        log.info("Invoking SADI service:  fetchRothcMonthlyDataParams");
+        log.info("Invoking SADI service:  fetchRothcMonthlyDataParams2");
 
         Model outputModel = output.getModel();
 
@@ -120,36 +119,37 @@ public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet
 
                 for (JsonElement environmentDataElement : environmentDataArray) {
                     JsonObject envJsonObject = environmentDataElement.getAsJsonObject();
-                    float cinpVal = envJsonObject.get("C_inp").getAsFloat();
-                    float dpmRpmVal = envJsonObject.get("DPM_RPM").getAsFloat();
-                    float evapVal = envJsonObject.get("Evap").getAsFloat();
-                    float fymVal = envJsonObject.get("FYM").getAsFloat();
-                    int pcVal = envJsonObject.get("PC").getAsInt();
 
-                    Resource cinpResource = outputModel.createResource();
-                    cinpResource.addProperty(Vocab.type, Vocab.Cinp);
-                    cinpResource.addLiteral(Vocab.has_value, cinpVal);
-                    output.addProperty(Vocab.has_cinp, cinpResource);
+                    float rainVal = envJsonObject.get("Rain").getAsFloat();
+                    float tmpVal = envJsonObject.get("Tmp").getAsFloat();
+                    float modernVal = envJsonObject.get("modern").getAsFloat();
+                    int monthVal = envJsonObject.get("month").getAsInt();
+                    int yearVal = envJsonObject.get("year").getAsInt();
 
-                    Resource dpmRpmResource = outputModel.createResource();
-                    dpmRpmResource.addProperty(Vocab.type, Vocab.DpmRpm);
-                    dpmRpmResource.addLiteral(Vocab.has_value, dpmRpmVal);
-                    output.addProperty(Vocab.has_dpmRpm, dpmRpmResource);
+                    Resource rainResource = outputModel.createResource();
+                    rainResource.addProperty(Vocab.type, Vocab.Rain);
+                    rainResource.addLiteral(Vocab.has_value, rainVal);
+                    output.addProperty(Vocab.has_rain, rainResource);
 
-                    Resource evapResource = outputModel.createResource();
-                    evapResource.addProperty(Vocab.type, Vocab.Evap);
-                    evapResource.addLiteral(Vocab.has_value, evapVal);
-                    output.addProperty(Vocab.has_evap, evapResource);
+                    Resource tmpResource = outputModel.createResource();
+                    tmpResource.addProperty(Vocab.type, Vocab.Tmp);
+                    tmpResource.addLiteral(Vocab.has_value, tmpVal);
+                    output.addProperty(Vocab.has_tmp, tmpResource);
 
-                    Resource fymResource = outputModel.createResource();
-                    fymResource.addProperty(Vocab.type, Vocab.Fym);
-                    fymResource.addLiteral(Vocab.has_value, fymVal);
-                    output.addProperty(Vocab.has_fym, fymResource);
+                    Resource modernResource = outputModel.createResource();
+                    modernResource.addProperty(Vocab.type, Vocab.Modern);
+                    modernResource.addLiteral(Vocab.has_value, modernVal);
+                    output.addProperty(Vocab.has_modern, modernResource);
 
-                    Resource pcResource = outputModel.createResource();
-                    pcResource.addProperty(Vocab.type, Vocab.Pc);
-                    pcResource.addLiteral(Vocab.has_value, pcVal);
-                    output.addProperty(Vocab.has_pc, pcResource);
+                    Resource monthResource = outputModel.createResource();
+                    monthResource.addProperty(Vocab.type, Vocab.Month);
+                    monthResource.addLiteral(Vocab.has_value, monthVal);
+                    output.addProperty(Vocab.has_month, monthResource);
+
+                    Resource yearResource = outputModel.createResource();
+                    yearResource.addProperty(Vocab.type, Vocab.Year);
+                    yearResource.addLiteral(Vocab.has_value, yearVal);
+                    output.addProperty(Vocab.has_year, yearResource);
                 }
 
 
