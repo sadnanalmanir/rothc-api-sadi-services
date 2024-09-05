@@ -5,6 +5,22 @@
 <web-app>
     <display-name>Rothc Process-based SADI Services</display-name>
     <servlet>
+        <servlet-name>fetchRothcInputClayParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcInputClayParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcInputDepthParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcInputDepthParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcInputIomParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcInputIomParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcInputNstepsParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcInputNstepsParams</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>fetchRothcInputParams</servlet-name>
         <servlet-class>uk.ac.rothamsted.ide.FetchRothcInputParams</servlet-class>
     </servlet>
@@ -16,6 +32,22 @@
         <servlet-name>fetchRothcMonthlyDataParams2</servlet-name>
         <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataParams2</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>fetchRothcInputClayParams</servlet-name>
+        <url-pattern>/fetchRothcInputClayParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcInputDepthParams</servlet-name>
+        <url-pattern>/fetchRothcInputDepthParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcInputIomParams</servlet-name>
+        <url-pattern>/fetchRothcInputIomParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcInputNstepsParams</servlet-name>
+        <url-pattern>/fetchRothcInputNstepsParams</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>fetchRothcInputParams</servlet-name>
         <url-pattern>/fetchRothcInputParams</url-pattern>

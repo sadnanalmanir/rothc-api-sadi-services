@@ -21,6 +21,10 @@
             <h2>SADI Services</h2>
             <ul>
                 <li><a href="./fetchRothcInputParams">fetchRothcInputParams</a></li>
+                <li><a href="./fetchRothcInputClayParams">fetchRothcInputClayParams</a></li>
+                <li><a href="./fetchRothcInputDepthParams">fetchRothcInputDepthParams</a></li>
+                <li><a href="./fetchRothcInputIomParams">fetchRothcInputIomParams</a></li>
+                <li><a href="./fetchRothcInputNstepsParams">fetchRothcInputNstepsParams</a></li>
                 <li><a href="./fetchRothcMonthlyDataParams">fetchRothcMonthlyDataParams</a></li>
                 <li><a href="./fetchRothcMonthlyDataParams2">fetchRothcMonthlyDataParams2</a></li>
             </Ul>

@@ -13,25 +13,24 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.sadiframework.service.annotations.*;
 import org.sadiframework.service.simple.SimpleSynchronousServiceServlet;
 
-import org.apache.http.impl.client.CloseableHttpClient;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-@Name("fetchRothcMonthlyDataParams")
+@Name("fetchRothcInputIomParams")
 @Description("Rothc SADI services: Fetch non-monthly data values based on the start date, end date, and id of catchment and field")
 @ContactEmail("sadnanalmanir@gmail.com")
-@InputClass("http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataParams.owl#Input")
-@OutputClass("http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataParams.owl#Output")
-public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet {
-    private static final Logger log = Logger.getLogger(FetchRothcMonthlyDataParams.class);
+@InputClass("http://localhost:8080/ontology/service-ontology/fetchRothcInputIomParams.owl#Input")
+@OutputClass("http://localhost:8080/ontology/service-ontology/fetchRothcInputIomParams.owl#Output")
+public class FetchRothcInputIomParams extends SimpleSynchronousServiceServlet {
+    private static final Logger log = Logger.getLogger(FetchRothcInputIomParams.class);
 
     @Override
     public void processInput(Resource input, Resource output) {
@@ -40,7 +39,7 @@ public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet
         String apiSecretValue=null;
 
 
-        try (InputStream is = FetchRothcMonthlyDataParams.class.getClassLoader().getResourceAsStream("rothc-api-access.properties")) {
+        try (InputStream is = FetchRothcInputIomParams.class.getClassLoader().getResourceAsStream("rothc-api-access.properties")) {
             Properties prop = new Properties();
             prop.load(is);
             apiSecretKey = prop.getProperty("apiKey");
@@ -50,7 +49,7 @@ public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet
         }
 
         log.info("*** SADI Service ***");
-        log.info("Invoking SADI service:  fetchRothcMonthlyDataParams");
+        log.info("Invoking SADI service:  fetchRothcInputIomParams");
 
         Model outputModel = output.getModel();
 
@@ -117,41 +116,12 @@ public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet
                 JsonObject dataJson = rootJson.get("data").getAsJsonObject();
                 JsonArray environmentDataArray = dataJson.get("environment_data").getAsJsonArray();
                 JsonObject paramsObject = dataJson.get("params").getAsJsonObject();
+                float iomVal = paramsObject.get("iom").getAsFloat();
 
-                for (JsonElement environmentDataElement : environmentDataArray) {
-                    JsonObject envJsonObject = environmentDataElement.getAsJsonObject();
-                    float cinpVal = envJsonObject.get("C_inp").getAsFloat();
-                    float dpmRpmVal = envJsonObject.get("DPM_RPM").getAsFloat();
-                    float evapVal = envJsonObject.get("Evap").getAsFloat();
-                    float fymVal = envJsonObject.get("FYM").getAsFloat();
-                    int pcVal = envJsonObject.get("PC").getAsInt();
-
-                    Resource cinpResource = outputModel.createResource();
-                    cinpResource.addProperty(Vocab.type, Vocab.Cinp);
-                    cinpResource.addLiteral(Vocab.has_value, cinpVal);
-                    output.addProperty(Vocab.has_cinp, cinpResource);
-
-                    Resource dpmRpmResource = outputModel.createResource();
-                    dpmRpmResource.addProperty(Vocab.type, Vocab.DpmRpm);
-                    dpmRpmResource.addLiteral(Vocab.has_value, dpmRpmVal);
-                    output.addProperty(Vocab.has_dpmRpm, dpmRpmResource);
-
-                    Resource evapResource = outputModel.createResource();
-                    evapResource.addProperty(Vocab.type, Vocab.Evap);
-                    evapResource.addLiteral(Vocab.has_value, evapVal);
-                    output.addProperty(Vocab.has_evap, evapResource);
-
-                    Resource fymResource = outputModel.createResource();
-                    fymResource.addProperty(Vocab.type, Vocab.Fym);
-                    fymResource.addLiteral(Vocab.has_value, fymVal);
-                    output.addProperty(Vocab.has_fym, fymResource);
-
-                    Resource pcResource = outputModel.createResource();
-                    pcResource.addProperty(Vocab.type, Vocab.Pc);
-                    pcResource.addLiteral(Vocab.has_value, pcVal);
-                    output.addProperty(Vocab.has_pc, pcResource);
-                }
-
+                Resource iomResource = outputModel.createResource();
+                iomResource.addProperty(Vocab.type, Vocab.Iom);
+                iomResource.addLiteral(Vocab.has_value, iomVal);
+                output.addProperty(Vocab.has_iom, iomResource);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -171,30 +141,15 @@ public class FetchRothcMonthlyDataParams extends SimpleSynchronousServiceServlet
         public static final Property has_endDate = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_endDate");
         public static final Property has_fieldId = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_fieldId");
         public static final Property has_catchmentId = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_catchmentId");
-        public static final Property has_cinp = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_cinp");
-        public static final Property has_dpmRpm = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_dpmRpm");
-        public static final Property has_evap = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_evap");
-        public static final Property has_fym = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_fym");
-        public static final Property has_pc = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_pc");
-        public static final Property has_rain = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_rain");
-        public static final Property has_tmp = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_tmp");
-        public static final Property has_modern = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_modern");
-        public static final Property has_month = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_month");
-        public static final Property has_year = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_year");
+        public static final Property has_iom = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_iom");
         // data property
         public static final Property has_value = m_model.createProperty("http://localhost:8080/ontology/domain-ontology/rothc.owl#has_value");
         // resources
-        public static final Resource Cinp = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Cinp");
-        public static final Resource DpmRpm = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#DpmRpm");
-        public static final Resource Evap = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Evap");
-        public static final Resource Fym = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Fym");
-        public static final Resource Pc = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Pc");
-        public static final Resource Rain = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Rain");
-        public static final Resource Tmp = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Tmp");
-        public static final Resource Modern = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Modern");
-        public static final Resource Month = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Month");
-        public static final Resource Year = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Year");
+        public static final Resource Iom = m_model.createResource("http://localhost:8080/ontology/domain-ontology/rothc.owl#Iom");
+    }
+
+    private static String getNullAsEmptyString(JsonElement jsonElement) {
+        return jsonElement.isJsonNull() ? "" : jsonElement.getAsString();
     }
 }
-
 
