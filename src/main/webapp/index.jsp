@@ -25,8 +25,18 @@
                 <li><a href="./fetchRothcInputDepthParams">fetchRothcInputDepthParams</a></li>
                 <li><a href="./fetchRothcInputIomParams">fetchRothcInputIomParams</a></li>
                 <li><a href="./fetchRothcInputNstepsParams">fetchRothcInputNstepsParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataCinpParams">fetchRothcMonthlyDataCinpParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataDpmRpmParams">fetchRothcMonthlyDataDpmRpmParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataEvapParams">fetchRothcMonthlyDataEvapParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataFymParams">fetchRothcMonthlyDataFymParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataPcParams">fetchRothcMonthlyDataPcParams</a></li>
                 <li><a href="./fetchRothcMonthlyDataParams">fetchRothcMonthlyDataParams</a></li>
                 <li><a href="./fetchRothcMonthlyDataParams2">fetchRothcMonthlyDataParams2</a></li>
+                <li><a href="./fetchRothcMonthlyDataModernParams">fetchRothcMonthlyDataModernParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataRainParams">fetchRothcMonthlyDataRainParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataTmpParams">fetchRothcMonthlyDataTmpParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataMonthParams">fetchRothcMonthlyDataMonthParams</a></li>
+                <li><a href="./fetchRothcMonthlyDataYearParams">fetchRothcMonthlyDataYearParams</a></li>
             </Ul>
         </div> <!-- content -->
         <div id='footer'>

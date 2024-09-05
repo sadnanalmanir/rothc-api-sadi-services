@@ -25,12 +25,52 @@
         <servlet-class>uk.ac.rothamsted.ide.FetchRothcInputParams</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>fetchRothcMonthlyDataCinpParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataCinpParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataDpmRpmParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataDpmRpmParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataEvapParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataEvapParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataFymParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataFymParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataPcParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataPcParams</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>fetchRothcMonthlyDataParams</servlet-name>
         <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataParams</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>fetchRothcMonthlyDataParams2</servlet-name>
         <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataParams2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataModernParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataModernParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataRainParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataRainParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataTmpParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataTmpParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataMonthParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataMonthParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchRothcMonthlyDataYearParams</servlet-name>
+        <servlet-class>uk.ac.rothamsted.ide.FetchRothcMonthlyDataYearParams</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>fetchRothcInputClayParams</servlet-name>
@@ -53,12 +93,52 @@
         <url-pattern>/fetchRothcInputParams</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataCinpParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataCinpParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataDpmRpmParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataDpmRpmParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataEvapParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataEvapParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataFymParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataFymParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataPcParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataPcParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>fetchRothcMonthlyDataParams</servlet-name>
         <url-pattern>/fetchRothcMonthlyDataParams</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>fetchRothcMonthlyDataParams2</servlet-name>
         <url-pattern>/fetchRothcMonthlyDataParams2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataModernParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataModernParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataRainParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataRainParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataTmpParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataTmpParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataMonthParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataMonthParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchRothcMonthlyDataYearParams</servlet-name>
+        <url-pattern>/fetchRothcMonthlyDataYearParams</url-pattern>
     </servlet-mapping>
 </web-app>
 
