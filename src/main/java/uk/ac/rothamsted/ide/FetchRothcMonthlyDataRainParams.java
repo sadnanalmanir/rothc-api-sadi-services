@@ -91,7 +91,7 @@ public class FetchRothcMonthlyDataRainParams extends SimpleSynchronousServiceSer
 
 
 
-        String url = "http://149.155.17.203:8000/api/utils/v1/fetchRothcdata/";
+        String url = "http://149.155.17.203/api/utils/v1/fetchRothcdata/";
 
         CloseableHttpClient client = HttpClients.createDefault();
         StringEntity entity = new StringEntity(body, ContentType.APPLICATION_JSON);
