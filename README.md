@@ -50,7 +50,7 @@ After the deployment, open the browser to view:
   - http://localhost:8080/ontology/service-ontology/fetchRothcInputClayParams.owl
   - http://localhost:8080/ontology/service-ontology/fetchRothcInputDepthParams.owl
   - http://localhost:8080/ontology/service-ontology/fetchRothcInputIomParams.owl
-  - http://localhost:8080/ontology/service-ontology/fetchRothcInputNstepsParamsl.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcInputNstepsParams.owl
   - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataCinpParams.owl
   - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataDpmRpmParams.owl
   - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataEvapParams.owl
