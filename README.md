@@ -1,32 +1,25 @@
 # rothc-api-sadi-services
-SADI Services exposing RESTful API [endpoints](https://red-crescent-623716.postman.co/documentation/7453000-ae05790f-8bea-4c3c-8b9c-006ebab9e13e) of the [North Wyke Farm Platform](https://rothc.rothamsted.ac.uk/) Data 
+SADI Services exposing RESTful API [endpoints](http://149.155.17.203/api/utils/v1/fetchRothcdata/) of the [North Wyke Farm Platform](https://www.rothamsted.ac.uk/national-capability/north-wyke-farm-platform) Data 
 
 ## SADI services
 The following table shows the SADI services, their CRUD operations, and the endpoints they expose
 
-| SADI Service                  | Description                                                                                                | HTTP Method | API Endpoint                                                      |
-|-------------------------------|------------------------------------------------------------------------------------------------------------|-------------|-------------------------------------------------------------------|
-| allCatchments                 | List all catchments by their unique identifiers                                                            | GET         | https://rothc.rothamsted.ac.uk:8443/getCatchments                  |
-| getCatchmentInfo                  | Get information about the catchments based on the identifier                                               | GET         | https://rothc.rothamsted.ac.uk:8443/getCatchments                  |
-| allCatchmentMeasurementTypes  | List all measurement types of the catchments by their identifiers (**type_id identifiers are Non-unique**) | GET         | https://rothc.rothamsted.ac.uk:8443/getCatchmentMeasurementTypes   |
-| getCatchmentMeasurementTypeInfo   | Get information about the measurements of catchments based on the identifier (**type_id identifiers are Non-unique**)                              | GET         | https://rothc.rothamsted.ac.uk:8443/getCatchmentMeasurementTypes   |
-| allFields                     | List all fields by their unique identifiers                                                                | GET         | https://rothc.rothamsted.ac.uk:8443/getFields                      |
-| getFieldInfo                      | Get information about the fields based on the identifier                                                   | GET         | https://rothc.rothamsted.ac.uk:8443/getFields                      |
-| allFieldEvents                | List all events in the fields by their identifiers                                   | GET         | https://rothc.rothamsted.ac.uk:8443/getFieldEvents                 |
-| getFieldEventInfo                 | Get information about the events in the fields based on the identifier                                     | GET         | https://rothc.rothamsted.ac.uk:8443/getFieldEvents                 |
-| allAnimalBasicData            | List all basic animal data by their unique identifiers                                                     | GET         | https://rothc.rothamsted.ac.uk:8443/getAnimalBasicData             |
-| getAnimalBasicDataInfo            | Get information about the basic animal data based on the identifier                                        | GET         | https://rothc.rothamsted.ac.uk:8443/getAnimalBasicData             |
-| allDataQualities              | List all measures of the quality of data by their unique identifiers                                       | GET         | https://rothc.rothamsted.ac.uk:8443/getDataQualities               |
-| getDataQualityInfo                | Get information about the measurements of quality of data based on the identifier                          | GET         | https://rothc.rothamsted.ac.uk:8443/getDataQualities               |
-| allMeasurementLocations       | List all locations of the measurements by their unique identifiers                                         | GET         | https://rothc.rothamsted.ac.uk:8443/getMeasurementLocations        |
-| getMeasurementLocationInfo        | Get information about the locations of the measurements based on the identifier                            | GET         | https://rothc.rothamsted.ac.uk:8443/getMeasurementLocations        |
-| allMeasurementTypes           | List all types of the measurements by their unique identifiers                                             | GET         | https://rothc.rothamsted.ac.uk:8443/getMeasurementTypes            |
-| getMeasurementTypeInfo            | Get information about the types of measurements based on the identifier                                    | GET         | https://rothc.rothamsted.ac.uk:8443/getMeasurementTypes            |
-| allMeasurementTypesLong       | List all types of the measurements in the long-form by their non-unique identifiers                        | GET         | https://rothc.rothamsted.ac.uk:8443/getMeasurementTypesLong        |
-| getMeasurementTypeLongInfo        | Get information about the measurements in the long-form based on the identifier                            | GET         | https://rothc.rothamsted.ac.uk:8443/getMeasurementTypesLong        |
-| getMeasurementByCatchmentName | Get information about the measurements based on the type, start date, end date, and name of catchment      | POST        | https://rothc.rothamsted.ac.uk:8443/getMeasurementsByCatchmentName |
-| getMeasurementByDateRange     | Get information about the measurements based on the type, start and end date                               | POST        | https://rothc.rothamsted.ac.uk:8443/getMeasurementsByDateRange     |
-| getMeasurementByTypeId        | Get paginated information about the measurements based on type, page, and number of pages                  | POST        | https://rothc.rothamsted.ac.uk:8443/getMeasurementsByDateRange     |
+| SADI Service                      | Description                                                                                | HTTP Method | API Endpoint                                                      |
+|-----------------------------------|--------------------------------------------------------------------------------------------|-------------|-------------------------------------------------------------------|
+| fetchRothcInputClayParams         | Fetch catchment clay value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                  |
+| fetchRothcInputDepthParams        | Fetch catchment depth value based on the start date, end date, catchment id and field id   | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                  |
+| fetchRothcInputIomParams          | Fetch catchment iom value based on the start date, end date, catchment id and field id     | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/   |
+| fetchRothcInputNstepsParams       | Fetch catchment nsteps value based on the start date, end date, catchment id and field id  | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/   |
+| fetchRothcMonthlyDataCinpParams   | Fetch catchment C_inp value based on the start date, end date, catchment id and field id   | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                      |
+| fetchRothcMonthlyDataDpmRpmParams | Fetch catchment DPM_PRM value based on the start date, end date, catchment id and field id | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                      |
+| fetchRothcMonthlyDataEvapParams   | Fetch catchment Evap value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                 |
+| fetchRothcMonthlyDataFymParams    | Fetch catchment FYM value based on the start date, end date, catchment id and field id     | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                 |
+| fetchRothcMonthlyDataPcParams     | Fetch catchment PC value based on the start date, end date, catchment id and field id      | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/             |
+| fetchRothcMonthlyDataRainParams   | Fetch catchment Rain value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/             |
+| fetchRothcMonthlyDataTmpParams    | Fetch catchment Tmp value based on the start date, end date, catchment id and field id     | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/               |
+| fetchRothcMonthlyDataModernParams | Fetch catchment modern value based on the start date, end date, catchment id and field id  | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/               |
+| fetchRothcMonthlyDataMonthParams  | Fetch catchment month value based on the start date, end date, catchment id and field id   | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/        |
+| fetchRothcMonthlyDataYearParams   | Fetch catchment year value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/        |
 
 ## How to deploy
 You need to have [docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) 
@@ -53,27 +46,20 @@ After the deployment, open the browser to view:
 - SADI services at http://localhost:8080/rothc-api-sadi-services
 - Domain ontology at http://localhost:8080/ontology/domain-ontology/rothc.owl
 - Service ontologies at
-  - http://localhost:8080/ontology/service-ontology/allCatchments.owl
-  - http://localhost:8080/ontology/service-ontology/getCatchmentInfo.owl
-  - http://localhost:8080/ontology/service-ontology/allCatchmentMeasurementTypes.owl
-  - http://localhost:8080/ontology/service-ontology/getCatchmentMeasurementTypeInfo.owl
-  - http://localhost:8080/ontology/service-ontology/allFields.owl
-  - http://localhost:8080/ontology/service-ontology/getFieldInfo.owl
-  - http://localhost:8080/ontology/service-ontology/allFieldEvents.owl
-  - http://localhost:8080/ontology/service-ontology/getFieldEventInfo.owl
-  - http://localhost:8080/ontology/service-ontology/allAnimalBasicData.owl
-  - http://localhost:8080/ontology/service-ontology/getAnimalBasicDataInfo.owl
-  - http://localhost:8080/ontology/service-ontology/allDataQualities.owl
-  - http://localhost:8080/ontology/service-ontology/getDataQualityInfo.owl
-  - http://localhost:8080/ontology/service-ontology/allMeasurementLocations.owl
-  - http://localhost:8080/ontology/service-ontology/getMeasurementLocationInfo.owl
-  - http://localhost:8080/ontology/service-ontology/allMeasurementTypes.owl
-  - http://localhost:8080/ontology/service-ontology/getMeasurementTypeInfo.owl
-  - http://localhost:8080/ontology/service-ontology/allMeasurementTypesLong.owl
-  - http://localhost:8080/ontology/service-ontology/getMeasurementTypeLongInfo.owl
-  - http://localhost:8080/ontology/service-ontology/getMeasurementByCatchmentName.owl
-  - http://localhost:8080/ontology/service-ontology/getMeasurementByDateRange.owl
-  - http://localhost:8080/ontology/service-ontology/getMeasurementByTypeId.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcInputClayParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcInputDepthParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcInputIomParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcInputNstepsParamsl.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataCinpParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataDpmRpmParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataEvapParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataFymParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataPcParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataRainParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataTmpParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataModernParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataMonthParams.owl
+  - http://localhost:8080/ontology/service-ontology/fetchRothcMonthlyDataYearParams.owl
 
 ## Test the service
 The `curl` command can be used to test each service
@@ -92,20 +78,11 @@ $ curl -H 'Content-Type: text/rdf+n3' -H 'Accept: text/rdf+n3' --data @PATH_TO_N
 
 For instance, use the following commands to test the getCatchmentInfo service
 ```shell
-$ curl http://localhost:8080/rothc-api-sadi-services/allCatchments
+$ curl http://localhost:8080/rothc-api-sadi-services/fetchRothcInputClayParams
 ```
 ```shell
-$ curl -H 'Content-Type: text/rdf' -H 'Accept: text/rdf' --data @./src/test/inputdata/allCatchments/1.rdf http://localhost:8080/rothc-api-sadi-services/allCatchments
+$ curl -H 'Content-Type: text/rdf' -H 'Accept: text/rdf' --data @./src/test/inputdata/fetchRothcInputClayParams/1.rdf http://localhost:8080/rothc-api-sadi-services/fetchRothcInputClayParams
 ```
 ```shell
-$ curl -H 'Content-Type: text/rdf+n3' -H 'Accept: text/rdf+n3' --data @./src/test/inputdata/allCatchments/1.n3 http://localhost:8080/rothc-api-sadi-services/allCatchments
+$ curl -H 'Content-Type: text/rdf+n3' -H 'Accept: text/rdf+n3' --data @./src/test/inputdata/fetchRothcInputClayParams/1.n3 http://localhost:8080/rothc-api-sadi-services/fetchRothcInputClayParams
 ```
-
-
-### Services failing to respond
-#### getMeasurmentByTypeId
-- The endpoint fails to return contents for the `queryResults` key
-- Response from the API endpoint contains [{"totalPages":1883678},{"queryResults":[]}]
-#### getFieldEventInfo
-- Sometimes, the service fails to return results when RDF data is used sa input
-- Error message is shown as `reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response`
