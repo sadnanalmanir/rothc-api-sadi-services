@@ -4,22 +4,23 @@ SADI Services exposing RESTful API [endpoints](http://149.155.17.203/api/utils/v
 ## SADI services
 The following table shows the SADI services, their CRUD operations, and the endpoints they expose
 
-| SADI Service                      | Description                                                                                | HTTP Method | API Endpoint                                                      |
-|-----------------------------------|--------------------------------------------------------------------------------------------|-------------|-------------------------------------------------------------------|
-| fetchRothcInputClayParams         | Fetch catchment clay value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                  |
-| fetchRothcInputDepthParams        | Fetch catchment depth value based on the start date, end date, catchment id and field id   | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                  |
-| fetchRothcInputIomParams          | Fetch catchment iom value based on the start date, end date, catchment id and field id     | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/   |
-| fetchRothcInputNstepsParams       | Fetch catchment nsteps value based on the start date, end date, catchment id and field id  | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/   |
-| fetchRothcMonthlyDataCinpParams   | Fetch catchment C_inp value based on the start date, end date, catchment id and field id   | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                      |
-| fetchRothcMonthlyDataDpmRpmParams | Fetch catchment DPM_PRM value based on the start date, end date, catchment id and field id | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                      |
-| fetchRothcMonthlyDataEvapParams   | Fetch catchment Evap value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                 |
-| fetchRothcMonthlyDataFymParams    | Fetch catchment FYM value based on the start date, end date, catchment id and field id     | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/                 |
-| fetchRothcMonthlyDataPcParams     | Fetch catchment PC value based on the start date, end date, catchment id and field id      | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/             |
-| fetchRothcMonthlyDataRainParams   | Fetch catchment Rain value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/             |
-| fetchRothcMonthlyDataTmpParams    | Fetch catchment Tmp value based on the start date, end date, catchment id and field id     | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/               |
-| fetchRothcMonthlyDataModernParams | Fetch catchment modern value based on the start date, end date, catchment id and field id  | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/               |
-| fetchRothcMonthlyDataMonthParams  | Fetch catchment month value based on the start date, end date, catchment id and field id   | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/        |
-| fetchRothcMonthlyDataYearParams   | Fetch catchment year value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/        |
+| SADI Service                      | Description                                                                                | HTTP Method | API Endpoint                                           |
+|-----------------------------------|--------------------------------------------------------------------------------------------|-------------|--------------------------------------------------------|
+| fetchRothcInputClayParams         | Fetch catchment clay value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcInputDepthParams        | Fetch catchment depth value based on the start date, end date, catchment id and field id   | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcInputIomParams          | Fetch catchment iom value based on the start date, end date, catchment id and field id     | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcInputNstepsParams       | Fetch catchment nsteps value based on the start date, end date, catchment id and field id  | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataCinpParams   | Fetch catchment C_inp value based on the start date, end date, catchment id and field id   | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataDpmRpmParams | Fetch catchment DPM_PRM value based on the start date, end date, catchment id and field id | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataEvapParams   | Fetch catchment Evap value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataFymParams    | Fetch catchment FYM value based on the start date, end date, catchment id and field id     | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataPcParams     | Fetch catchment PC value based on the start date, end date, catchment id and field id      | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataRainParams   | Fetch catchment Rain value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataTmpParams    | Fetch catchment Tmp value based on the start date, end date, catchment id and field id     | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataModernParams | Fetch catchment modern value based on the start date, end date, catchment id and field id  | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataMonthParams  | Fetch catchment month value based on the start date, end date, catchment id and field id   | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+| fetchRothcMonthlyDataYearParams   | Fetch catchment year value based on the start date, end date, catchment id and field id    | POST        | http://149.155.17.203/api/utils/v1/fetchRothcdata/     |
+
 
 ## How to deploy
 You need to have [docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) 
