@@ -13,10 +13,10 @@ ex:node1 a  rothc:StartDate ;
     rothc:has_value "2011-01-01"^^xsd:string .
 
 ex:node2 a  rothc:EndDate ;
-    rothc:has_value "2020-12-31"^^xsd:string .
+    rothc:has_value "2012-12-31"^^xsd:string .
 
 ex:node3 a  rothc:CatchmentId ;
-    rothc:has_value "1"^^xsd:integer .
+    rothc:has_value "5"^^xsd:integer .
 
 ex:node4 a  rothc:FieldId ;
     rothc:has_value "1"^^xsd:integer .

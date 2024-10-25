@@ -12,13 +12,13 @@
 
         <ns0:has_endDate>
             <ns0:EndDate rdf:about="http://example.com/exuri#node2">
-                <ns0:has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-12-31</ns0:has_value>
+                <ns0:has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012-12-31</ns0:has_value>
             </ns0:EndDate>
         </ns0:has_endDate>
 
         <ns0:has_catchmentId>
             <ns0:CatchmentId rdf:about="http://example.com/exuri#node3">
-                <ns0:has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns0:has_value>
+                <ns0:has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ns0:has_value>
             </ns0:CatchmentId>
         </ns0:has_catchmentId>
 
