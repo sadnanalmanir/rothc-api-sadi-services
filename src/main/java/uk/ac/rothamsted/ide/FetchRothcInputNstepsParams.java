@@ -8,6 +8,8 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
+import io.github.cdimascio.dotenv.Dotenv;
+import io.github.cdimascio.dotenv.DotenvException;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -35,18 +37,13 @@ public class FetchRothcInputNstepsParams extends SimpleSynchronousServiceServlet
     @Override
     public void processInput(Resource input, Resource output) {
 
-        String apiSecretKey=null;
-        String apiSecretValue=null;
+        Dotenv dotenv = Dotenv.configure().load();
 
+        String nwfp_data_api_key = dotenv.get("NWFP_DATA_API_KEY");
+        String nwfp_data_api_secret = dotenv.get("NWFP_DATA_API_SECRET");
 
-        try (InputStream is = FetchRothcInputNstepsParams.class.getClassLoader().getResourceAsStream("rothc-api-access.properties")) {
-            Properties prop = new Properties();
-            prop.load(is);
-            apiSecretKey = prop.getProperty("apiKey");
-            apiSecretValue = prop.getProperty("apiValue");
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
-        }
+        if (nwfp_data_api_key == null || nwfp_data_api_secret == null)
+            throw new DotenvException("Credentials missing for the North Wyke Farm Platform DATA API");
 
         log.info("*** SADI Service ***");
         log.info("Invoking SADI service:  fetchRothcInputNstepsParams");
@@ -98,7 +95,7 @@ public class FetchRothcInputNstepsParams extends SimpleSynchronousServiceServlet
 
         HttpPost post = new HttpPost(url);
         post.setEntity(entity);
-        post.addHeader(apiSecretKey, apiSecretValue);
+        post.addHeader(nwfp_data_api_key, nwfp_data_api_secret);
 
         CloseableHttpResponse response = null;
         try {
