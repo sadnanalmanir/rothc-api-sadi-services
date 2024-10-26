@@ -36,6 +36,20 @@ $ git clone https://github.com/sadnanalmanir/rothc-api-sadi-services.git
 ```shell
 $ cd rothc-api-sadi-services
 ```
+
+Rename the `.env.example` file in the `src/main/resources` folder into a file named `.env`. For example:
+
+```shell
+$ mv src/main/resources/.env.example src/main/resources/.env
+```
+
+You will need required credentials in order to run the demo. The following credentials need to be set in the `.env` file. 
+
+```
+NWFP_DATA_API_KEY=<replace-with-your-nwfp-data-api-key>
+NWFP_DATA_API_SECRET=<replace-with-your-nwfp-data-api-secret>
+```
+
 ### Use docker compose command
 
 ```shell

@@ -19,10 +19,10 @@ import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.sadiframework.service.annotations.*;
 import org.sadiframework.service.simple.SimpleSynchronousServiceServlet;
-
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+import io.github.cdimascio.dotenv.Dotenv;
+import io.github.cdimascio.dotenv.DotenvEntry;
+import io.github.cdimascio.dotenv.DotenvException;
 
 @Name("fetchRothcInputClayParams")
 @Description("Rothc SADI services: Fetch non-monthly data values based on the start date, end date, and id of catchment and field")
@@ -35,18 +35,13 @@ public class FetchRothcInputClayParams extends SimpleSynchronousServiceServlet {
     @Override
     public void processInput(Resource input, Resource output) {
 
-        String apiSecretKey=null;
-        String apiSecretValue=null;
+        Dotenv dotenv = Dotenv.configure().load();
 
+        String nwfp_data_api_key = dotenv.get("NWFP_DATA_API_KEY");
+        String nwfp_data_api_secret = dotenv.get("NWFP_DATA_API_SECRET");
 
-        try (InputStream is = FetchRothcInputClayParams.class.getClassLoader().getResourceAsStream("rothc-api-access.properties")) {
-            Properties prop = new Properties();
-            prop.load(is);
-            apiSecretKey = prop.getProperty("apiKey");
-            apiSecretValue = prop.getProperty("apiValue");
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
-        }
+        if (nwfp_data_api_key == null || nwfp_data_api_secret == null)
+            throw new DotenvException("Credentials missing for the North Wyke Farm Platform DATA API");
 
         log.info("*** SADI Service ***");
         log.info("Invoking SADI service:  fetchRothcInputClayParams");
@@ -89,8 +84,6 @@ public class FetchRothcInputClayParams extends SimpleSynchronousServiceServlet {
                 "}";
         log.info("Data to send via POST method: " +body);
 
-
-
         String url = "https://api-nwfp.rothamsted.ac.uk/api/utils/v1/fetchRothcdata/";
 
         CloseableHttpClient client = HttpClients.createDefault();
@@ -98,7 +91,7 @@ public class FetchRothcInputClayParams extends SimpleSynchronousServiceServlet {
 
         HttpPost post = new HttpPost(url);
         post.setEntity(entity);
-        post.addHeader(apiSecretKey, apiSecretValue);
+        post.addHeader(nwfp_data_api_key, nwfp_data_api_secret);
 
         CloseableHttpResponse response = null;
         try {
