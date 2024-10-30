@@ -88,7 +88,7 @@ public class FetchRothcMonthlyDataMonthParamsTest extends TestCase {
         }
     }
 
-    public void testEnsureThatMonthValueEquals() throws Exception {
+    public void testEnsureThatMonthValueEquals1to12() throws Exception {
 
         if (nwfp_data_api_key == null || nwfp_data_api_secret == null)
             throw new DotenvException("Credentials missing for the North Wyke Farm Platform DATA API");
@@ -120,7 +120,18 @@ public class FetchRothcMonthlyDataMonthParamsTest extends TestCase {
                     JsonObject envJsonObject = environmentDataElement.getAsJsonObject();
 
                     int monthVal = envJsonObject.get("month").getAsInt();
-
+                    assertEquals(1, monthVal);
+                    assertEquals(2, monthVal);
+                    assertEquals(3, monthVal);
+                    assertEquals(4, monthVal);
+                    assertEquals(5, monthVal);
+                    assertEquals(6, monthVal);
+                    assertEquals(7, monthVal);
+                    assertEquals(8, monthVal);
+                    assertEquals(9, monthVal);
+                    assertEquals(10, monthVal);
+                    assertEquals(11, monthVal);
+                    assertEquals(12, monthVal);
                 }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);

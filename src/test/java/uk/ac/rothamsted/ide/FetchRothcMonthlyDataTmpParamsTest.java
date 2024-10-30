@@ -88,7 +88,7 @@ public class FetchRothcMonthlyDataTmpParamsTest extends TestCase {
         }
     }
 
-    public void testEnsureThatTmpValueEquals() throws Exception {
+    public void testEnsureThatTmpValueRangesBetweetn4053125and16876041() throws Exception {
 
         if (nwfp_data_api_key == null || nwfp_data_api_secret == null)
             throw new DotenvException("Credentials missing for the North Wyke Farm Platform DATA API");
@@ -120,6 +120,7 @@ public class FetchRothcMonthlyDataTmpParamsTest extends TestCase {
                     JsonObject envJsonObject = environmentDataElement.getAsJsonObject();
 
                     float tmpVal = envJsonObject.get("Tmp").getAsFloat();
+                    assertEquals(16.876041, tmpVal, 12.83f);
 
                 }
             } catch (IOException ex) {

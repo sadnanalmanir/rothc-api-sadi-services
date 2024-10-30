@@ -120,6 +120,7 @@ public class FetchRothcMonthlyDataRainParamsTest extends TestCase {
                     JsonObject envJsonObject = environmentDataElement.getAsJsonObject();
 
                     float rainVal = envJsonObject.get("Rain").getAsFloat();
+                    assertEquals(0.06526316, rainVal, 0.07f);
                 }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.hp.hpl.jena.rdf.model.Resource;
 import io.github.cdimascio.dotenv.Dotenv;
 import io.github.cdimascio.dotenv.DotenvException;
 import junit.framework.TestCase;
@@ -117,9 +118,8 @@ public class FetchRothcMonthlyDataPcParamsTest extends TestCase {
 
                 for (JsonElement environmentDataElement : environmentDataArray) {
                     JsonObject envJsonObject = environmentDataElement.getAsJsonObject();
-                    float cinpVal = envJsonObject.get("C_inp").getAsFloat();
-                    assertEquals(0.168, cinpVal, 0.003f);
-                    assertEquals(0.166, cinpVal, 0.003f);
+                    int pcVal = envJsonObject.get("PC").getAsInt();
+                    assertEquals(1, pcVal);
                 }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);

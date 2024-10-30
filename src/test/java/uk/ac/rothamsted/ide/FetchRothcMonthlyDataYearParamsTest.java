@@ -88,7 +88,7 @@ public class FetchRothcMonthlyDataYearParamsTest extends TestCase {
         }
     }
 
-    public void testEnsureThatYearValueEquals() throws Exception {
+    public void testEnsureThatYearValueEquals2011and2012() throws Exception {
 
         if (nwfp_data_api_key == null || nwfp_data_api_secret == null)
             throw new DotenvException("Credentials missing for the North Wyke Farm Platform DATA API");
@@ -119,7 +119,8 @@ public class FetchRothcMonthlyDataYearParamsTest extends TestCase {
                 for (JsonElement environmentDataElement : environmentDataArray) {
                     JsonObject envJsonObject = environmentDataElement.getAsJsonObject();
                     int yearVal = envJsonObject.get("year").getAsInt();
-
+                    assertEquals(2011, yearVal, 1);
+                    assertEquals(2012, yearVal, 1);
                 }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);

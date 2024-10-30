@@ -88,7 +88,7 @@ public class FetchRothcMonthlyDataModernParamsTest extends TestCase {
         }
     }
 
-    public void testEnsureThatModernValueEquals() throws Exception {
+    public void testEnsureThatModernValueEquals975() throws Exception {
 
         if (nwfp_data_api_key == null || nwfp_data_api_secret == null)
             throw new DotenvException("Credentials missing for the North Wyke Farm Platform DATA API");
@@ -120,6 +120,7 @@ public class FetchRothcMonthlyDataModernParamsTest extends TestCase {
                     JsonObject envJsonObject = environmentDataElement.getAsJsonObject();
 
                     float modernVal = envJsonObject.get("modern").getAsFloat();
+                    assertEquals(97.5, modernVal, 0.0f);
                 }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);

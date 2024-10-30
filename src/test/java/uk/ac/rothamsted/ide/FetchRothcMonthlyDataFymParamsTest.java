@@ -88,7 +88,7 @@ public class FetchRothcMonthlyDataFymParamsTest extends TestCase {
         }
     }
 
-    public void testEnsureThatFymValueEquals() throws Exception {
+    public void testEnsureThatFymValueEquals000() throws Exception {
 
         if (nwfp_data_api_key == null || nwfp_data_api_secret == null)
             throw new DotenvException("Credentials missing for the North Wyke Farm Platform DATA API");
@@ -119,7 +119,7 @@ public class FetchRothcMonthlyDataFymParamsTest extends TestCase {
                 for (JsonElement environmentDataElement : environmentDataArray) {
                     JsonObject envJsonObject = environmentDataElement.getAsJsonObject();
                     float fymVal = envJsonObject.get("FYM").getAsFloat();
-
+                    assertEquals(0.0, fymVal, 0.0f);
                 }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
