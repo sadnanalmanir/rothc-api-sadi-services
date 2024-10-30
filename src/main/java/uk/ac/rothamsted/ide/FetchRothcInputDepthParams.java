@@ -23,8 +23,6 @@ import org.sadiframework.service.annotations.*;
 import org.sadiframework.service.simple.SimpleSynchronousServiceServlet;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 
 @Name("fetchRothcInputDepthParams")
 @Description("Rothc SADI services: Fetch non-monthly data values based on the start date, end date, and id of catchment and field")
